@@ -1,0 +1,39 @@
+.description {position: relative;display: block;width: 1024px;padding: 163px 0px 70px 0px;margin: 0 auto;}
+.description-wrap {margin-right: auto; margin-left: auto; width: 500px; border: 1px solid #ddd; border-radius: 7px; overflow: hidden; box-sizing: border-box; padding: 20px;}
+
+.description-wrap .example-num {box-sizing: border-box; border-bottom: 1px solid #AAAAAA; margin-bottom: 25px;}
+.description-wrap .example-num div {color: #AAAAAA; font-weight: 700; font-size: 15px;}
+.description-wrap .example-num ul {list-style: none; display: flex; justify-content:space-between; padding: 0 40px; margin-bottom: 25px;}
+.description-wrap .example-num ul li {margin: 0 2px; width: 30px; height: 30px; border: 0.5px solid #AAAAAA; border-radius: 20px; text-align: center; vertical-align: middle;}
+.description-wrap .example-num ul li div {margin-top: 4px; font-weight: bold; color: #000000;}
+
+.description-wrap .input-num {background-color: #FDF5E6; border-radius: 10px; height: 75px; vertical-align: middle; padding: 25px 0px 22px 0px;}
+.description-wrap .input-num ul {list-style: none; display: flex; justify-content:space-between; padding: 0 40px; margin-bottom: 25px;}
+.description-wrap .input-num ul li {margin: 0 2px;}
+.description-wrap .input-num ul li input {outline: none; border: 0.5px solid #AAAAAA; border-radius: 20px; width: 20px; height: 20px; padding:7.5px; text-align: center; vertical-align: middle;}
+
+.description-wrap .submit-button {margin-top: 20px; width: 100px; margin-left: auto; margin-right: auto; border:1px solid #96A5FF; box-sizing: border-box; border-radius: 6px; cursor: pointer; background-color: #96A5FF; text-align: center; float: right;}
+.description-wrap .submit-button div {color:#ffffff; font-size: 14px; font-weight: bold; width: 65px; margin: 7.5px auto; }
+
+
+.result {position: relative;display: block;width: 1024px; padding: 0px 0px 70px 0px;margin: 0 auto;}
+.result-wrap {margin-right: auto; margin-left: auto; width: 500px; border: 1px solid #ddd; border-radius: 7px; overflow: hidden; box-sizing: border-box; padding: 20px;}
+.result-wrap .answer-num {box-sizing: border-box; border-bottom: 1px solid #AAAAAA; margin-bottom: 25px;}
+.result-wrap .answer-num div {color: #000000; font-weight: 700; font-size: 15px;}
+.result-wrap .answer-num ul {list-style: none; display: flex; justify-content:space-between; padding: 0 40px; margin-bottom: 25px;}
+.result-wrap .answer-num ul li {margin: 0 2px; width: 30px; height: 30px; border: 0.5px solid #AAAAAA; border-radius: 20px; text-align: center; vertical-align: middle;}
+.result-wrap .answer-num ul li div {margin-top: 4px; font-weight: bold; color: #000000;}
+
+.result-wrap .result-num {box-sizing: border-box; margin-bottom: 25px;}
+.result-wrap .result-num div {color: #000000; font-weight: 700; font-size: 15px;}
+.result-wrap .result-num ul {list-style: none; display: flex; justify-content:space-between; padding: 0 40px; margin-bottom: 25px;}
+.result-wrap .result-num ul li {margin: 0 2px; width: 30px; height: 30px; border: 0.5px solid #AAAAAA; border-radius: 20px; text-align: center; vertical-align: middle;}
+.result-wrap .result-num ul li div {margin-top: 4px; font-weight: bold; color: #000000;}
+
+.result-wrap .result-text {margin-left: 40px;}
+.result-wrap .result-text .res-text-rank {font-weight: bold; margin: 5px 0px;}
+.result-wrap .result-text .res-text-coin {font-weight: bold; margin: 5px 0px;}
+
+.result a {text-decoration: none;}
+.result a .re-start {margin-top: 20px; width: 100px; margin-left: auto; margin-right: auto; border:1px solid #AAAAAA; box-sizing: border-box; border-radius: 6px; font-size: 0; cursor: pointer; background-color: #AAAAAA; text-align: center;}
+.result a .re-start div {color:#ffffff; font-size: 14px; font-weight: bold; width: 65px; margin: 7.5px auto; }

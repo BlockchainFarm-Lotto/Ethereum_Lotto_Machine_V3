@@ -1,0 +1,14 @@
+header {display: block; z-index: 100;}
+#fixed-bar {width:100%; background-color: #fff; position:fixed; top:0; left:0; right:0;}
+.fixed-bar-box-shadow {box-sizing: border-box; border-bottom: 1px solid rgba(0,0,0,0.5); width: 1024px; }
+#fixed-bar #fixed-bar-wrap {width: 1024px; margin:0 auto; padding: 16px 0; position:relative; display: flex; flex-direction: row; justify-content: space-between;}
+#fixed-bar #fixed-bar-wrap a { text-decoration: none; color: #000000;}
+#fixed-bar #fixed-bar-wrap a #fixed-bar-title {font-size: 25px; font-weight: bold;}
+#fixed-bar #fixed-bar-wrap .link-button {margin:0;width: 120px;height: 40px; border:1px solid #28A0FF; box-sizing: border-box; border-radius: 6px; font-size: 0; background-color: transparent; cursor: pointer; background-color: #28A0FF; }
+#fixed-bar #fixed-bar-wrap .link-button .button-text {color:#ffffff; font-size: 16px; font-weight: bold; width: 65px; margin: 7.5px auto; }
+
+
+#fixed-bar #fixed-bar-wrap .btn-wrap {display: flex; justify-content: space-between; width: 490px; height: 40px;}
+#fixed-bar #fixed-bar-wrap .addr {color: #000000; margin-top: 8px; margin-right: 5px;}
+#fixed-bar #fixed-bar-wrap a .mypage-button {margin:0;width: 120px;height: 40px; border:1px solid #28A0FF; box-sizing: border-box; border-radius: 6px; font-size: 0; background-color: transparent; cursor: pointer; background-color: #28A0FF;}
+#fixed-bar #fixed-bar-wrap a .mypage-button div {color:#ffffff; font-size: 16px; font-weight: bold; width: 65px; margin: 7.5px auto; }

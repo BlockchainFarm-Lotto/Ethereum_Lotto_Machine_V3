@@ -1,0 +1,19 @@
+.description {position: relative;display: block;width: 1024px;padding: 163px 0px 70px 0px;margin: 0 auto;}
+.description-wrap {margin-right: auto; margin-left: auto; width: 500px; border: 1px solid #ddd; border-radius: 7px; overflow: hidden; box-sizing: border-box; padding: 20px;}
+
+.description-wrap .example-num {box-sizing: border-box; border-bottom: 1px solid #AAAAAA;}
+.description-wrap .example-num div {color: #AAAAAA; font-weight: 700; font-size: 15px;}
+.description-wrap .example-num ul {list-style: none; display: flex; justify-content:space-between; padding: 0 40px; margin-bottom: 25px;}
+.description-wrap .example-num ul li {margin: 0 2px; width: 30px; height: 30px; border: 0.5px solid #AAAAAA; border-radius: 20px; text-align: center; vertical-align: middle;}
+.description-wrap .example-num ul li div {margin-top: 4px; font-weight: bold; color: #000000;}
+
+.description-wrap .example-text {width: transparent;}
+.description-wrap .example-text .rank {margin-bottom: 35px;}
+.description-wrap .example-text .rank ul {list-style: none;}
+.description-wrap .example-text .rank ul li div {margin: 10px 0px; font-weight: 700;}
+.description-wrap .example-text .rec-text {width: transparent; text-align: center;}
+.description-wrap .example-text .rec-text .rec1 {font-weight: 800; font-weight: 800; color: #FF5675;}
+.description-wrap .example-text .rec-text .rec2 {font-weight: 800; font-weight: bold; font-size: 15px; color: #FF0000;}
+.description-wrap .buy-button {margin-top: 20px; margin-left: 180px; width: 100px;height: 40px; border:1px solid #28A0FF; box-sizing: border-box; border-radius: 6px; font-size: 0; cursor: pointer; background-color: #28A0FF; text-align: center;}
+.description-wrap .buy-button div {color:#ffffff; font-size: 14px; font-weight: bold; width: 65px; margin: 7.5px auto; }
+

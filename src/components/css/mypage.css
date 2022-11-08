@@ -1,0 +1,28 @@
+.myinfo {position: relative;display: block;width: 1024px;padding: 163px 0px 70px 0px;margin: 0 auto;}
+.myinfo-wrap {margin-right: auto; margin-left: auto; width: 500px; border: 1px solid #ddd; border-radius: 7px; overflow: hidden; box-sizing: border-box; padding: 15px;}
+
+.myinfo-wrap .details {margin: 10px 10px;}
+.myinfo-wrap .details .details-box {margin-bottom: 20px;}
+.myinfo-wrap .details .details-box .title {width: 80px; font-weight: bold; float: left;}
+.myinfo-wrap .details .details-box .contents {float: none;}
+
+.myinfo a {text-decoration: none;}
+.myinfo a .re-start {margin-top: 20px; width: 100px; margin-left: auto; margin-right: auto; border:1px solid #AAAAAA; box-sizing: border-box; border-radius: 6px; font-size: 0; cursor: pointer; background-color: #AAAAAA; text-align: center;}
+.myinfo a .re-start div {color:#ffffff; font-size: 14px; font-weight: bold; width: 65px; margin: 7.5px auto; }
+
+.web3-button {width: 100px; margin-left: auto; margin-right: auto; border:1px solid #28A0FF; box-sizing: border-box; border-radius: 6px; cursor: pointer; background-color: #28A0FF; text-align: center; float: left;}
+.web3-button div {color:#ffffff; font-size: 14px; font-weight: bold; width: 65px; margin: 7.5px auto; }
+
+.getcoin-text {font-weight: bold; float: none; height: 37px; padding-top: 2.5px; margin-left: 120px;}
+.getcoin-text span {vertical-align: middle;}
+
+.details-input {float: none; height: 31px; padding: 0 5px; border-radius: 5px; margin-left: 20px;}
+
+.send-form {overflow: hidden; margin-left: 120px;}
+.send-form .send-form-cont .tit2 {font-weight: bold; float: left; padding-top: 5.5px; width: 50px;}
+.send-form .send-form-cont:nth-child(1) {display: block; margin-bottom: 10px;}
+.send-form .send-form-cont .details-input {margin-left: 0px;}
+.getwidth {width: 220px;}
+
+.unlink-button {width: 100px; margin-left: auto; margin-right: auto; border:1px solid #FF5675; box-sizing: border-box; border-radius: 6px; cursor: pointer; background-color: #FF5675; text-align: center; float: left;}
+.unlink-button div {color:#ffffff; font-size: 14px; font-weight: bold; width: 65px; margin: 7.5px auto; }
