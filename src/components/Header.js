@@ -11,7 +11,7 @@ function Header(props) {
     let account = "";
     let LottoCoinContract;
     let web3 = new Web3(window.ethereum);
-    web3.currentProvider.setMaxListeners(300);
+    web3.currentProvider.setMaxListeners(1);
 
     const [getWeb3UserAddr, setGetWeb3UserAddr] = useState(""); // 메타마스크 활성화된 주소
     const [getVisible, setGetVisible] = useState(false);
@@ -61,16 +61,13 @@ function Header(props) {
     useEffect(() => {
         if (window.ethereum) {
             window.ethereum.on("chainChanged", () => {
-                pathname === "/" ?
-                    window.location.reload() :
-                    window.location.href = `/`;
+                window.location.href = `/`;
             });
             window.ethereum.on("accountsChanged", () => {
                 // 최초로 메타마스크 연결 시 비동기 함수가 아니기 때문에 account 값을 가져오지 못하는 트릭 활용
                 console.log("account : " + account); 
+                console.log("pathname : " + pathname);
                 if(account !== "") {
-                    pathname === "/" ?
-                    window.location.reload() :
                     window.location.href = `/`;
                 }
             });
