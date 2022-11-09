@@ -2,6 +2,9 @@
 - Goorli Testnet과 React.js를 이용한 DApp 
 - Blockchain Farm Term Project - Ethereum Lotto Machine Version 3
 
+## 배포 사이트
+- [https://lottocoin.netlify.app/](https://lottocoin.netlify.app/)
+
 ## Goerli Test 관련
 - [https://goerlifaucet.com/](https://goerlifaucet.com/)
 
