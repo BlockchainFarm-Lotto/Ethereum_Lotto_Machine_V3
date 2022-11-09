@@ -8,7 +8,7 @@ function Header(props) {
     let visible = true;
     if(pathname === "/Mypage" || pathname.includes("Buy")) visible = false;
     let owner;
-    let account;
+    let account = "";
     let LottoCoinContract;
     let web3 = new Web3(window.ethereum);
     web3.currentProvider.setMaxListeners(300);
@@ -23,8 +23,8 @@ function Header(props) {
 
         if(window.ethereum){
             web3 = new Web3(window.ethereum);
-            console.log('메타마스크 연결 성공')
-            console.log(web3)
+            console.log('메타마스크 연결 성공');
+            console.log(web3);
             try{
                 await window.ethereum.request({ method: "eth_requestAccounts" });
             }catch (error){
@@ -40,7 +40,6 @@ function Header(props) {
             console.log('메타마스크 연결 필요');
             alert('메타마스크 연결이 필요합니다!');
             window.open("https://metamask.io/download/");
-            // window.location.href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=ko";
         }
 
         account = await web3.eth.getAccounts();
@@ -62,16 +61,16 @@ function Header(props) {
     useEffect(() => {
         if (window.ethereum) {
             window.ethereum.on("chainChanged", () => {
-                if(pathname === "/") {
-                    window.location.reload();
-                } else {
+                pathname === "/" ?
+                    window.location.reload() :
                     window.location.href = `/`;
-                }
             });
             window.ethereum.on("accountsChanged", () => {
-                if(pathname === "/") {
-                    window.location.reload();
-                } else {
+                // 최초로 메타마스크 연결 시 비동기 함수가 아니기 때문에 account 값을 가져오지 못하는 트릭 활용
+                console.log("account : " + account); 
+                if(account !== "") {
+                    pathname === "/" ?
+                    window.location.reload() :
                     window.location.href = `/`;
                 }
             });

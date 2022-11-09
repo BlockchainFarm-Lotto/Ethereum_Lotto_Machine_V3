@@ -28,7 +28,9 @@ npm start
 
 ## Caution
 ```
-- 최초 메타마스크 연결 시 새로고침 이슈가 발생 + 다시 연결하기를 클릭해야  
+- ~~최초 메타마스크 연결 시 새로고침 이슈가 발생 + 다시 연결하기를 클릭해야~~
+- 최초 메타마스크 연결 새로고침 이슈 해결
+- 계정(주소)을 전환할 때 새로고침하여 메인화면으로 전환 
 - 크롬 브라우저에서 실행할 것
 - 구글 확장 프로그램인 Open link in same tab, pop-up as tab [Free] 과 MeatMask 충돌 현상 발생
 - Open link in same tab, pop-up as tab [Free] 작동 중지한 후, 프로젝트를 실행해야 함
