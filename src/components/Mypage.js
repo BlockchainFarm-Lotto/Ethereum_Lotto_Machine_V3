@@ -24,10 +24,8 @@ function Mypage(props) {
 
     const getBalanceOf = async () => {
         let web3 = new Web3(window.ethereum);
-        console.log(owner);
         if(window.ethereum){
             web3 = new Web3(window.ethereum);
-            console.log('메타마스크 연결!')
             LottoCoinContract = new web3.eth.Contract(props.ABI, props.Addr);
             result = await LottoCoinContract.methods.balanceOf(account[0]).call();
             
@@ -36,12 +34,12 @@ function Mypage(props) {
             try{
                 await window.ethereum.request({ method: "eth_requestAccounts" });
             }catch (error){
-                console.log(`error ouccur ${error}`)
+                alert(`error ouccur ${error}`)
             }
         } else if(window.web3){
             web3 = new Web3(Web3.curentProvider);
         } else{
-            console.log('메타마스크 연결이 필요합니다...');
+            alert('메타마스크 연결이 필요합니다...');
         }
     }
 
@@ -49,8 +47,8 @@ function Mypage(props) {
         if(window.ethereum){
             web3 = new Web3(window.ethereum);
             LottoCoinContract = new web3.eth.Contract(props.ABI, props.Addr);
-            getcoin = await LottoCoinContract.methods.GetCoin().call().then(res => {console.log("getCoin result:", res); setGettingCoin(res);});
-            console.log("getCoin Function result : "+getcoin);
+            getcoin = await LottoCoinContract.methods.GetCoin().call().then(res => {setGettingCoin(res);});
+            
             // getcoin = await LottoCoinContract.methods.balanceOf(account[0]).call().then(res => {console.log("getCoin result:", res); setGettingCoin(res);});
         }
     }
@@ -66,7 +64,6 @@ function Mypage(props) {
             LottoCoinContract = new web3.eth.Contract(props.ABI, props.Addr);
             props.setLoading(true);
             setcoin = await LottoCoinContract.methods.SetCoin(settingCoin).send({"from": account[0]});
-            console.log("setCoin Function result : "+setcoin);
         }
     }
 
@@ -76,14 +73,12 @@ function Mypage(props) {
             LottoCoinContract = new web3.eth.Contract(props.ABI, props.Addr);
             props.setLoading(true);
             sendcoin = await LottoCoinContract.methods.Send(getAddr, sendingCoin).send({"from": account[0]});
-            console.log('sendCoin Function result : '+sendcoin);
         }
     }
 
     const receiveCoin = async () => {
         if(window.ethereum){
             web3 = new Web3(window.ethereum);
-            console.log('receiveCoin');
             LottoCoinContract = new web3.eth.Contract(props.ABI, props.Addr);
 
             ownerBalance = await LottoCoinContract.methods.balanceOf(owner).call();
@@ -96,12 +91,10 @@ function Mypage(props) {
             props.setLoading(true);
 
             receivecoin = await LottoCoinContract.methods.ReceiveCoin().send({"from": account[0]}).then(function(result) {
-                console.log("수락 버튼 클릭");
-                console.log(result);
                 let newBalance = Number(balance) + 10;
                 setBalance(String(newBalance));
             }).catch(function(e) {
-                console.log("거부 버튼 클릭");
+                alert(`error occur ${e}`);
             });
 
             props.setLoading(false);
@@ -117,8 +110,6 @@ function Mypage(props) {
               }
             ]
         });
-        console.log("disconnect");
-        console.log("result: " + result);
         window.location.href = `/`;
     }
 

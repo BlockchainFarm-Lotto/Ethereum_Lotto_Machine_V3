@@ -42,9 +42,7 @@ function Buy(props) {
             }
         }
         lotto = lotto.sort(function(a, b) {return a-b;});
-        console.log("lotto : "+lotto);
         setResArr(lotto);
-        console.log("resArr : "+resArr);
     }
 
     const checkNum = (n) => {
@@ -60,7 +58,6 @@ function Buy(props) {
         submitNum.push(sub5);
         submitNum.push(sub6);
         submitNum = submitNum.sort(function(a, b) {return a-b;});
-        console.log("submitNum "+submitNum);
         setSubmitArr(submitNum);
     }
 
@@ -73,16 +70,13 @@ function Buy(props) {
                 }
             }
         }
-        console.log("matchIdx "+matchIdx);
         setGetMatchIdx(matchIdx);
-        console.log("matchCnt "+ matchCnt);
         
         await getRankCoin(matchCnt);
         
     }
 
-    const getRankCoin = async (n) => {
-        console.log("n "+ n);
+    const getRankCoin = async () => {
         if(matchCnt == 6) {
             rank = 1;
             coin = 5;
@@ -116,16 +110,15 @@ function Buy(props) {
         if(window.ethereum){
             web3 = new Web3(window.ethereum);
             LottoCoinContract = new web3.eth.Contract(props.ABI, props.Addr);
-            console.log("rank : "+rank);
             props.setLoading(true);
 
             result = await LottoCoinContract.methods.Winning(rank, resArr, submitArr).send({"from": account}).then(function(result) {
-                console.log("수락 버튼 클릭");
                 setResVisible(true); // 결과 화면 보이게
             }).catch(function(e) {
-                console.log("거부 버튼 클릭");
-                alert("트랜잭션을 거절하셨습니다!");
+                props.setLoading(false);
+                alert(`error occur ${e}`);
                 window.location.href = `/`;
+                return;
             });
             // 로딩 화면
             props.setLoading(false);
@@ -133,12 +126,12 @@ function Buy(props) {
             try{
                 await window.ethereum.request({ method: "eth_requestAccounts" });
             }catch (error){
-                console.log(`error ouccur ${error}`)
+                alert(`error ouccur ${error}`);
             }
         } else if(window.web3){
-            let web3 = new Web3(Web3.curentProvider);
+            web3 = new Web3(Web3.curentProvider);
         } else{
-            console.log('메타마스크 연결이 필요합니다...');
+            alert('메타마스크 연결이 필요합니다...');
         }
     }
 

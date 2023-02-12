@@ -23,12 +23,10 @@ function Header(props) {
 
         if(window.ethereum){
             web3 = new Web3(window.ethereum);
-            console.log('메타마스크 연결 성공');
-            console.log(web3);
+
             try{
                 await window.ethereum.request({ method: "eth_requestAccounts" });
             }catch (error){
-                console.log(`error ouccur ${error}`);
                 if(error.code === -32002) {
                     alert("메타마스크 연결 대기중입니다.\n지갑 연결을 완료하여 주세요!");
                     return;
@@ -37,13 +35,11 @@ function Header(props) {
         } else if(window.web3){
             web3 = new Web3(Web3.curentProvider);
         } else{
-            console.log('메타마스크 연결 필요');
             alert('메타마스크 연결이 필요합니다!');
             window.open("https://metamask.io/download/");
         }
 
         account = await web3.eth.getAccounts();
-        console.log("최초 활성화된 계정이 나옵니다 : " + account);
 
         setGetWeb3UserAddr(account);
         props.SetAccount(account);
@@ -51,7 +47,6 @@ function Header(props) {
 
         LottoCoinContract = new web3.eth.Contract(props.ABI, props.Addr);
         owner = await LottoCoinContract.methods.owner().call();
-        console.log('owner:', owner);
         
         setGetOwner(owner);
         props.SetOwner(owner);
@@ -65,8 +60,6 @@ function Header(props) {
             });
             window.ethereum.on("accountsChanged", () => {
                 // 최초로 메타마스크 연결 시 비동기 함수가 아니기 때문에 account 값을 가져오지 못하는 트릭 활용
-                console.log("account : " + account); 
-                console.log("pathname : " + pathname);
                 if(account !== "") {
                     window.location.href = `/`;
                 }
