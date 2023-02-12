@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import { Link, useParams } from "react-router-dom";
 import "./css/buy.css";
 import Web3 from "web3";
+require('events').EventEmitter.prototype._maxListeners = 100;
 
 function Buy(props) {
     const params = useParams();
@@ -110,7 +111,6 @@ function Buy(props) {
     
         if(window.ethereum){
             web3 = new Web3(window.ethereum);
-            web3.currentProvider.setMaxListeners(300);
             LottoCoinContract = new web3.eth.Contract(props.ABI, props.Addr);
             props.setLoading(true);
 
@@ -132,7 +132,6 @@ function Buy(props) {
             }
         } else if(window.web3){
             web3 = new Web3(Web3.curentProvider);
-            web3.currentProvider.setMaxListeners(300);
         } else{
             alert('메타마스크 연결이 필요합니다...');
         }

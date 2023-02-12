@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./css/header.css";
 import Web3 from "web3";
+require('events').EventEmitter.prototype._maxListeners = 100;
 
 function Header(props) {
     const {pathname} = useLocation();
@@ -11,7 +12,6 @@ function Header(props) {
     let account = "";
     let LottoCoinContract;
     let web3 = new Web3(window.ethereum);
-    web3.currentProvider.setMaxListeners(1);
 
     const [getWeb3UserAddr, setGetWeb3UserAddr] = useState(""); // 메타마스크 활성화된 주소
     const [getVisible, setGetVisible] = useState(false);
@@ -23,7 +23,6 @@ function Header(props) {
 
         if(window.ethereum){
             web3 = new Web3(window.ethereum);
-            web3.currentProvider.setMaxListeners(300);
 
             try{
                 await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -35,7 +34,6 @@ function Header(props) {
             }
         } else if(window.web3){
             web3 = new Web3(Web3.curentProvider);
-            web3.currentProvider.setMaxListeners(300);
         } else{
             alert('메타마스크 연결이 필요합니다!');
             window.open("https://metamask.io/download/");

@@ -2,7 +2,7 @@
 import React from "react";
 import "./css/main.css";
 import Web3 from "web3";
-
+require('events').EventEmitter.prototype._maxListeners = 100;
 
 function Main(props) {
     let account =  props.account;
@@ -16,7 +16,7 @@ function Main(props) {
         let web3 = new Web3(window.ethereum);
         if(window.ethereum){
             web3 = new Web3(window.ethereum);
-            web3.currentProvider.setMaxListeners(300);
+
             LottoCoinContract = new web3.eth.Contract(props.ABI, props.Addr);
 
             balance = await LottoCoinContract.methods.balanceOf(account[0]).call();
