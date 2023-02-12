@@ -5,7 +5,7 @@
 ## 배포 사이트
 - [https://lottocoin.netlify.app/](https://lottocoin.netlify.app/)
 
-## Goerli Test 관련
+## Goerli Testnet faucet
 - [https://goerlifaucet.com/](https://goerlifaucet.com/)
 
 ## 연동방법
