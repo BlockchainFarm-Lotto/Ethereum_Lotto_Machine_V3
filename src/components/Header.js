@@ -20,10 +20,10 @@ function Header(props) {
     const initWeb3 = async () => {
 
         web3 = new Web3(window.ethereum);
-        web3.currentProvider.setMaxListeners(300);
 
         if(window.ethereum){
             web3 = new Web3(window.ethereum);
+            web3.currentProvider.setMaxListeners(300);
 
             try{
                 await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -35,6 +35,7 @@ function Header(props) {
             }
         } else if(window.web3){
             web3 = new Web3(Web3.curentProvider);
+            web3.currentProvider.setMaxListeners(300);
         } else{
             alert('메타마스크 연결이 필요합니다!');
             window.open("https://metamask.io/download/");
@@ -66,7 +67,7 @@ function Header(props) {
                 }
             });
         }
-    });
+    }, []);
 
     return (
         <React.Fragment>

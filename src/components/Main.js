@@ -14,9 +14,9 @@ function Main(props) {
     
     const buyLotto = async () => {
         let web3 = new Web3(window.ethereum);
-        web3.currentProvider.setMaxListeners(300);
         if(window.ethereum){
             web3 = new Web3(window.ethereum);
+            web3.currentProvider.setMaxListeners(300);
             LottoCoinContract = new web3.eth.Contract(props.ABI, props.Addr);
 
             balance = await LottoCoinContract.methods.balanceOf(account[0]).call();

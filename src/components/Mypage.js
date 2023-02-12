@@ -73,6 +73,7 @@ function Mypage(props) {
     const sendCoin = async () => {
         if(window.ethereum){
             web3 = new Web3(window.ethereum);
+            web3.currentProvider.setMaxListeners(300);
             LottoCoinContract = new web3.eth.Contract(props.ABI, props.Addr);
             props.setLoading(true);
             sendcoin = await LottoCoinContract.methods.Send(getAddr, sendingCoin).send({"from": account[0]});
@@ -82,6 +83,7 @@ function Mypage(props) {
     const receiveCoin = async () => {
         if(window.ethereum){
             web3 = new Web3(window.ethereum);
+            web3.currentProvider.setMaxListeners(300);
             LottoCoinContract = new web3.eth.Contract(props.ABI, props.Addr);
 
             ownerBalance = await LottoCoinContract.methods.balanceOf(owner).call();
@@ -105,7 +107,7 @@ function Mypage(props) {
     }
 
     const disconnectMetamask = async () => {
-        let result = await window.ethereum.request({
+        await window.ethereum.request({
             method: "wallet_requestPermissions",
             params: [
               {
