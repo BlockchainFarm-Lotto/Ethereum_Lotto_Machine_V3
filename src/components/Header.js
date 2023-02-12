@@ -20,6 +20,7 @@ function Header(props) {
     const initWeb3 = async () => {
 
         web3 = new Web3(window.ethereum);
+        web3.currentProvider.setMaxListeners(300);
 
         if(window.ethereum){
             web3 = new Web3(window.ethereum);

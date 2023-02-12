@@ -107,6 +107,7 @@ function Buy(props) {
 
     const WinningLotto = async () => {
         let web3 = new Web3(window.ethereum);
+        web3.currentProvider.setMaxListeners(300);
         if(window.ethereum){
             web3 = new Web3(window.ethereum);
             LottoCoinContract = new web3.eth.Contract(props.ABI, props.Addr);
